@@ -5,7 +5,7 @@ const divTodoList = document.querySelector('.todo-list');
 
 export const crearTodoHtml = ( todo ) => {
     const htmlTodo = `
-        <li class="${ (todo.completado) ? 'completed': ''}" data-id="abc"
+        <li class="${ (todo.completado) ? 'completed': ''}" data-id="${todo.id}"
             <div class="view">
                 <input class="toggle" type="checkbox" ${ (todo.completado) ? 'checked': ''}>
                 <label>${todo.tarea} </label>
