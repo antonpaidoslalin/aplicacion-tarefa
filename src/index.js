@@ -5,7 +5,7 @@ import './styles.css';
 
 const tarea=new Todo('Aprender Javascript');
 const tarea2=new Todo('Domar un unicornio')
-const todolist=new TodoList();
+export const todoList=new TodoList();
 
 todolist.nuevoTodo(tarea);
 
