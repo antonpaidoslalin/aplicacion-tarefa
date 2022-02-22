@@ -13,9 +13,10 @@ export class TodoList{
 
     }
     marcarCompletado(id){
-        for (i = 0; i<this.todos.length;i++){
-            if (this.todos[i].id = id){
+        for (let i = 0; i<this.todos.length;i++){
+            if (this.todos[i].id == id){
                 this.todos[i].completado = true;
+                break;
             }
 
         }

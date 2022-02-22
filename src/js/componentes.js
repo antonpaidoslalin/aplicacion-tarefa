@@ -1,5 +1,5 @@
 import { todoList } from '..';
-import { TodoList } from '../classes/todo-list.class';
+//import { TodoList } from '../classes/todo-list.class';
 import {Todo} from '../classes/todo.class';
 //Referencias HTML
 const divTodoList = document.querySelector('.todo-list');
@@ -21,7 +21,7 @@ export const crearTodoHtml = ( todo ) => {
         div.innerHTML = htmlTodo;    
         divTodoList.append ( div.firstElementChild );
     
-    return div.firstElementChild;
+   return div.firstElementChild;
         
 }       
 
@@ -39,3 +39,7 @@ txtInput.addEventListener('keyup', ( event ) => {
 
 })
 
+divTodoList.addEventListener ('click', (event) => {
+    console.log('click');
+    console.log(event.target.localName);
+})
