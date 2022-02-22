@@ -40,6 +40,12 @@ txtInput.addEventListener('keyup', ( event ) => {
 })
 
 divTodoList.addEventListener ('click', (event) => {
-    console.log('click');
-    console.log(event.target.localName);
+    const nombreElemento=event.target.localName;
+    const todoElemento=event.target.parentElement.parentElement;
+    const todoId = todoElemento.getAttribute('data-id');
+
+    if (nombreElemento.includes("input")){
+        todoList.marcarCompletado(todoId);
+        todoElemento.classList.toggle('completed');
+    }
 })
