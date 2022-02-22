@@ -9,6 +9,7 @@ export class TodoList{
     }
     eliminarTodo (id){
        // todos.array.forEach();
+       this.todos.filter(todo => todo.id!=id);
         
 
     }
