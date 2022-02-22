@@ -2,8 +2,9 @@ import { todoList } from '..';
 //import { TodoList } from '../classes/todo-list.class';
 import {Todo} from '../classes/todo.class';
 //Referencias HTML
-const divTodoList = document.querySelector('.todo-list');
-const txtInput = document.querySelector('.new-todo');
+const divTodoList   =   document.querySelector('.todo-list');
+const txtInput      =   document.querySelector('.new-todo');
+const btnBorrar     =   document.querySelector('.clear-completed');
 
 
 
@@ -48,4 +49,9 @@ divTodoList.addEventListener ('click', (event) => {
         todoList.marcarCompletado(todoId);
         todoElemento.classList.toggle('completed');
     }
+})
+
+btnBorrar.addEventListener ('click', () => {
+    todoList.eliminarCompletados();
+    
 })
