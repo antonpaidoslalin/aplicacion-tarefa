@@ -15,3 +15,4 @@ console.log(todoList);
 
 crearTodoHtml(tarea);
 **/
+//TODO: Visualizar datos cargados en Web
