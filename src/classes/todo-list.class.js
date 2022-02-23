@@ -5,10 +5,12 @@ export class TodoList{
 
     nuevoTodo(todo){
         this.todos.push(todo);
+        this.guardarLocalStorage();
     }
 
     eliminarTodo(id){
         this.todos=this.todos.filter(todo => todo.id!=id);
+        this.guardarLocalStorage();
     }
 
     marcarCompletado(id){
@@ -18,7 +20,7 @@ export class TodoList{
             // const todo=this.todos[i];
             if (id==this.todos[i].id){
                 this.todos[i].completado=!this.todos[i].completado;
-
+                this.guardarLocalStorage();
                 break;
             }
         }
@@ -26,5 +28,14 @@ export class TodoList{
 
     eliminarCompletados(){
         this.todos=this.todos.filter(todo => !todo.completado);
+        this.guardarLocalStorage();
+    }
+
+    guardarLocalStorage(){
+        localStorage.setItem('todo',JSON.stringify(this.todos));
+    }
+
+    cargarLocalStorage(){
+        localStorage.getItem(JSON.parse('todo'));
     }
 }
