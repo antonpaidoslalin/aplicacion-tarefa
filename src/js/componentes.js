@@ -32,7 +32,7 @@ txtInput.addEventListener('keyup', ( event ) => {
     let nuevoTodo;
    // console.log(event);
    console.log(event.keyCode);
-   if ((event.keyCode ===13)&&(txtInput.value.length > 0)){
+   if ((event.keyCode === 13)&&(txtInput.value.length > 0)){
         console.log(txtInput.value);
         const nuevoTodo = new Todo (txtInput.value);
         todoList.nuevoTodo(nuevoTodo);
@@ -51,7 +51,21 @@ divTodoList.addEventListener ('click', (event) => {
     }
 })
 
+<<<<<<< HEAD
 btnBorrar.addEventListener ('click', () => {
     todoList.eliminarCompletados();
     
+=======
+btnBorrar.addEventListener('click', () => {
+    todoList.eliminarCompletados();
+    for (let i = divTodoList.children.length-1; i >= 0; i--){
+        const elemento = divTodoList.children [i]
+        //TODO: Revisar que o colle ao revés
+        console.log(elemento);
+        if (elemento.classList.contains('completed')){
+            divTodoList.removeChild(elemento);
+        }
+    }
+
+>>>>>>> 590977e (Botón borrar completados)
 })
