@@ -1,28 +1,30 @@
-
 export class TodoList{
     constructor(){
-        
         this.todos=[];
     }
-    nuevoTodo (todo){
+
+    nuevoTodo(todo){
         this.todos.push(todo);
     }
-    eliminarTodo (id){
-       // todos.array.forEach();
-       this.todos.filter(todo => todo.id!=id);
-        
 
+    eliminarTodo(id){
+        this.todos=this.todos.filter(todo => todo.id!=id);
     }
+
     marcarCompletado(id){
-        for (let i = 0; i<this.todos.length;i++){
-            if (this.todos[i].id == id){
-                this.todos[i].completado = true;
+
+
+        for (let i=0;i<this.todos.length;i++){
+            // const todo=this.todos[i];
+            if (id==this.todos[i].id){
+                this.todos[i].completado=!this.todos[i].completado;
+
                 break;
             }
-
         }
     }
+
     eliminarCompletados(){
-        this.todos = this.todos.filter (todo => !todo.completado);
+        this.todos=this.todos.filter(todo => !todo.completado);
     }
 }

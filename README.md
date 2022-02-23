@@ -1,2 +1,1 @@
-# plantilla-webpack
-Plantilla de webpack.
+# plantilla-de-webpack
