@@ -16,3 +16,8 @@ console.log(todoList);
 crearTodoHtml(tarea);
 **/
 //TODO: Visualizar datos cargados en Web
+//todoList.todos.forEach(todo => crearTodoHtml( todo ));
+//Only if it has only one argument:
+//Só se só ten un argumento:
+//Solo si sólo tiene un sólo argumento: 
+todoList.todos.forEach(crearTodoHtml);
