@@ -1,3 +1,4 @@
+import { visNumPendientes } from "../js/componentes";
 export class TodoList{
     constructor(){
         this.cargarLocalStorage();
@@ -6,11 +7,13 @@ export class TodoList{
     nuevoTodo(todo){
         this.todos.push(todo);
         this.guardarLocalStorage();
+        visNumPendientes();
     }
 
     eliminarTodo(id){
         this.todos=this.todos.filter(todo => todo.id!=id);
         this.guardarLocalStorage();
+        visNumPendientes();
     }
 
     marcarCompletado(id){
@@ -24,11 +27,13 @@ export class TodoList{
                 break;
             }
         }
+        visNumPendientes();
     }
 
     eliminarCompletados(){
         this.todos=this.todos.filter(todo => !todo.completado);
         this.guardarLocalStorage();
+        visNumPendientes();
     }
 
     guardarLocalStorage(){
@@ -41,5 +46,5 @@ export class TodoList{
         ? JSON.parse(localStorage.getItem('todo')) 
         : [];
         console.log(this.todos);
-    }
+        }
 }

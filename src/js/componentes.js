@@ -1,4 +1,4 @@
-import { todoList } from "..";
+import { calcPendientes, todoList } from "..";
 import { Todo } from "../classes/todo.class";
 
 // Referencias HTML
@@ -7,6 +7,9 @@ const txtInput          = document.querySelector('.new-todo');
 const btnBorrar         = document.querySelector('.clear-completed');
 const ulFilters         = document.querySelector('.filters');
 const anchorFiltros     = document.querySelectorAll('.filtros');
+const locNumPendientes  = document.querySelector('strong');
+
+
 
 export const crearTodoHtml=(todo) =>{
     const htmlTodo=`
@@ -27,7 +30,9 @@ export const crearTodoHtml=(todo) =>{
     return div.firstElementChild;
 }
 
-
+export const visNumPendientes=() => {
+    locNumPendientes.innerText = calcPendientes();
+}
 // Eventos
 txtInput.addEventListener('keyup',(event)=>{
     if (event.keyCode===13 && txtInput.value!==''){
