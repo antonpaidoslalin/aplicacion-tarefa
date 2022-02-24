@@ -2,9 +2,11 @@ import { todoList } from "..";
 import { Todo } from "../classes/todo.class";
 
 // Referencias HTML
-const divTodoList   = document.querySelector('.todo-list');
-const txtInput      = document.querySelector('.new-todo');
-const btnBorrar     = document.querySelector('.clear-completed');
+const divTodoList       = document.querySelector('.todo-list');
+const txtInput          = document.querySelector('.new-todo');
+const btnBorrar         = document.querySelector('.clear-completed');
+const ulFilters         = document.querySelector('.filters');
+const anchorFilters         = document.querySelector('.filtros');
 
 
 export const crearTodoHtml=(todo) =>{
@@ -66,3 +68,6 @@ btnBorrar.addEventListener('click',() => {
     }
 
 });
+ulFilters.addEventListener('click', (event)=> {
+    
+})
