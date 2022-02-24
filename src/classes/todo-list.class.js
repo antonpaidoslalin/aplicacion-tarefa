@@ -37,8 +37,7 @@ export class TodoList{
 
     cargarLocalStorage(){
         
-        this.todos =  
-        (localStorage.getItem('todo')) 
+        this.todos =  (localStorage.getItem('todo')) 
         ? JSON.parse(localStorage.getItem('todo')) 
         : [];
         console.log(this.todos);

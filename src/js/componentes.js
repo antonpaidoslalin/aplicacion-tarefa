@@ -8,7 +8,6 @@ const btnBorrar         = document.querySelector('.clear-completed');
 const ulFilters         = document.querySelector('.filters');
 const anchorFiltros     = document.querySelectorAll('.filtros');
 
-
 export const crearTodoHtml=(todo) =>{
     const htmlTodo=`
     <li class="${(todo.completado)?'completed':''}" data-id="${todo.id}">
@@ -27,6 +26,7 @@ export const crearTodoHtml=(todo) =>{
 
     return div.firstElementChild;
 }
+
 
 // Eventos
 txtInput.addEventListener('keyup',(event)=>{
@@ -69,7 +69,9 @@ btnBorrar.addEventListener('click',() => {
 
 });
 ulFilters.addEventListener('click', (event)=> {
-    const filtro = event.target.text;
+    //constantes y variables
+    //constantes
+    const   filtro          = event.target.text;
     if (!filtro) { return; }
     anchorFiltros.forEach(elem => elem.classList.remove('selected'));
     for (const elemento of divTodoList.children){
