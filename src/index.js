@@ -18,5 +18,6 @@ export const calcPendientes=()=>{
 
 }
 todoList.todos.forEach(crearTodoHtml);
-console.log(`Número Pendentes: ${calcPendientes()}`);
+
+//chamadas
 visNumPendientes();
